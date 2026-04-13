@@ -1,17 +1,17 @@
 use sysinfo::System;
 
 fn main() {
-    println!("Uptime:  {}", System::uptime());
+    println!("\u{f0954} Uptime:  {}", System::uptime());
     println!(
-        "OS:  {}",
+        "\u{f0aab} OS:  {}",
         System::name().unwrap_or_else(|| "Unknown".to_string())
     );
     println!(
-        "Kernel:  {}",
+        "\u{f0ec0} Kernel:  {}",
         System::kernel_version().unwrap_or_else(|| "Unknown".to_string())
     );
     println!(
-        "OS Version:  {}",
+        "\u{ebe9} OS Version:  {}",
         System::os_version().unwrap_or_else(|| "Unknown".to_string())
     );
 }
