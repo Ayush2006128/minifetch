@@ -1,4 +1,4 @@
-use sysinfo::System;
+use minifetch::{get_uptime, get_os_name, get_kernel_version, get_os_version};
 
 fn main() {
     let ascii_art = [
@@ -8,18 +8,18 @@ fn main() {
         r#" /(  _  )\    / ' ' \   "#,
         r#"   ^^ ^^                "#,
     ];
-    let uptime = format!("\u{f0954} Uptime:  {}", System::uptime());
+    let uptime = format!("\u{f0954} Uptime:  {}", get_uptime());
     let os = format!(
         "\u{f0aab} OS:  {}",
-        System::name().unwrap_or_else(|| "Unknown".to_string())
+        get_os_name()
     );
     let kernel = format!(
         "\u{f0ec0} Kernel:  {}",
-        System::kernel_version().unwrap_or_else(|| "Unknown".to_string())
+        get_kernel_version()
     );
     let os_version = format!(
         "\u{ebe9} OS Version:  {}",
-        System::os_version().unwrap_or_else(|| "Unknown".to_string())
+        get_os_version()
     );
 
     let info = [uptime, os, kernel, os_version];
